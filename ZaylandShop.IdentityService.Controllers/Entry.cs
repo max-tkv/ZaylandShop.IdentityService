@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using ZaylandShop.IdentityService.Controllers.Api.V1;
+using ZaylandShop.IdentityService.Controllers.Auth.V1;
 
 namespace ZaylandShop.IdentityService.Controllers;
 

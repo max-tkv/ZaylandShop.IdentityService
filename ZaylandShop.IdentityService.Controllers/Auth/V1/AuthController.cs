@@ -5,10 +5,10 @@ using ZaylandShop.IdentityService.Controllers.Invariants;
 using ZaylandShop.IdentityService.Controllers.ViewModels;
 using ZaylandShop.IdentityService.Entities;
 
-namespace ZaylandShop.IdentityService.Controllers.Api.V1;
+namespace ZaylandShop.IdentityService.Controllers.Auth.V1;
 
 [ApiVersion("1")]
-[Route("api/v{version:apiVersion}/[controller]")]
+[Route("v{version:apiVersion}/[controller]")]
 [ApiController]
 public class AuthController : Controller
 {

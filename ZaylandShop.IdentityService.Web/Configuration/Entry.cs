@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Options;
-using ZaylandShop.IdentityService.Controllers.Api.V1;
+using ZaylandShop.IdentityService.Controllers.Auth.V1;
 using ZaylandShop.IdentityService.Web.Configuration.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
