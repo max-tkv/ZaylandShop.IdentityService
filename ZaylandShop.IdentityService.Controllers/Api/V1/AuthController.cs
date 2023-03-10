@@ -26,6 +26,7 @@ public class AuthController : Controller
     }
 
     [HttpGet]
+    [Produces("text/html")]
     public IActionResult Login(string returnUrl)
     {
         var loginView = new LoginViewModel()
@@ -37,6 +38,7 @@ public class AuthController : Controller
     }
     
     [HttpPost("login")]
+    [Produces("text/html")]
     public async Task<IActionResult> Login([FromForm] LoginViewModel loginView)
     {
         if (!ModelState.IsValid)
@@ -61,6 +63,7 @@ public class AuthController : Controller
     }
     
     [HttpGet("register")]
+    [Produces("text/html")]
     public IActionResult Register(string returnUrl)
     {
         var registerView = new RegisterViewModel()
@@ -72,6 +75,7 @@ public class AuthController : Controller
     }
     
     [HttpPost("register")]
+    [Produces("text/html")]
     public async Task<IActionResult> Register([FromForm] RegisterViewModel registerViewModel)
     {
         if (!ModelState.IsValid)
