@@ -6,4 +6,16 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.14" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.14" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.14" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ZaylandShop.IdentityService\ZaylandShop.IdentityService.csproj" />
+    </ItemGroup>
+
 </Project>

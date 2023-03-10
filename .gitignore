@@ -3,3 +3,8 @@ ZaylandShop.IdentityService/obj
 ZaylandShop.IdentityService.Controllers/obj
 ZaylandShop.IdentityService.Storage/obj
 ZaylandShop.IdentityService.Web/obj
+obj
+ZaylandShop.IdentityService/bin
+ZaylandShop.IdentityService.Controllers/bin
+ZaylandShop.IdentityService.Storage/bin
+ZaylandShop.IdentityService.Web/bin
