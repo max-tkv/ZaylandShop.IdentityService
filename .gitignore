@@ -1,0 +1,5 @@
+﻿.idea
+ZaylandShop.IdentityService/obj
+ZaylandShop.IdentityService.Controllers/obj
+ZaylandShop.IdentityService.Storage/obj
+ZaylandShop.IdentityService.Web/obj

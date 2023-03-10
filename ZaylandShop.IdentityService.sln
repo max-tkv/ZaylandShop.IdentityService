@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaylandShop.IdentityService.Web", "ZaylandShop.IdentityService.Web\ZaylandShop.IdentityService.Web.csproj", "{9E784F0A-E330-456A-A200-E9B70878F9E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaylandShop.IdentityService.Controllers", "ZaylandShop.IdentityService.Controllers\ZaylandShop.IdentityService.Controllers.csproj", "{28B1A7D4-A9AC-4E65-82A9-79FF4FDEFF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaylandShop.IdentityService", "ZaylandShop.IdentityService\ZaylandShop.IdentityService.csproj", "{5E3E6CF8-2A97-44F9-B5D6-6FBB82FBC686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaylandShop.IdentityService.Storage", "ZaylandShop.IdentityService.Storage\ZaylandShop.IdentityService.Storage.csproj", "{A05E322A-29DA-4C04-9649-29FA0352CB83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E784F0A-E330-456A-A200-E9B70878F9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E784F0A-E330-456A-A200-E9B70878F9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E784F0A-E330-456A-A200-E9B70878F9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E784F0A-E330-456A-A200-E9B70878F9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B1A7D4-A9AC-4E65-82A9-79FF4FDEFF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B1A7D4-A9AC-4E65-82A9-79FF4FDEFF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B1A7D4-A9AC-4E65-82A9-79FF4FDEFF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B1A7D4-A9AC-4E65-82A9-79FF4FDEFF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3E6CF8-2A97-44F9-B5D6-6FBB82FBC686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3E6CF8-2A97-44F9-B5D6-6FBB82FBC686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3E6CF8-2A97-44F9-B5D6-6FBB82FBC686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3E6CF8-2A97-44F9-B5D6-6FBB82FBC686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05E322A-29DA-4C04-9649-29FA0352CB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05E322A-29DA-4C04-9649-29FA0352CB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05E322A-29DA-4C04-9649-29FA0352CB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05E322A-29DA-4C04-9649-29FA0352CB83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
