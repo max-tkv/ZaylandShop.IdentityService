@@ -1,6 +1,7 @@
 ﻿using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ZaylandShop.IdentityService.Controllers.Invariants;
 using ZaylandShop.IdentityService.Controllers.ViewModels;
 using ZaylandShop.IdentityService.Entities;
 
@@ -49,7 +50,7 @@ public class AuthController : Controller
         var user = await _userManager.FindByEmailAsync(loginView.UserName);
         if (user == null)
         {
-            ModelState.AddModelError(string.Empty, "Пользователь не найден");
+            ModelState.AddModelError(string.Empty, AuthControllerInvariants.UserNotFound);
             return View(loginView);
         }
     
@@ -57,7 +58,7 @@ public class AuthController : Controller
         var result = await _signInManager.PasswordSignInAsync(loginView.UserName, loginView.Password, false, false);
         if (result.Succeeded)
             return Redirect(loginView.ReturnUrl);
-        ModelState.AddModelError(string.Empty, "Неверный пароль");
+        ModelState.AddModelError(string.Empty, AuthControllerInvariants.InvalidPassword);
         
         return View(loginView);
     }
@@ -89,7 +90,8 @@ public class AuthController : Controller
             Email = registerViewModel.UserName,
             EmailConfirmed = true
         };
-        user.PasswordHash = new PasswordHasher<AppUser>().HashPassword(user, registerViewModel.Password);
+        user.PasswordHash = new PasswordHasher<AppUser>()
+            .HashPassword(user, registerViewModel.Password);
     
         var result = await _userManager.CreateAsync(user);
         if (result.Succeeded)
@@ -98,7 +100,7 @@ public class AuthController : Controller
             return Redirect(registerViewModel.ReturnUrl);
         }
     
-        ModelState.AddModelError(string.Empty, "Ошибка при регистрации");
+        ModelState.AddModelError(string.Empty, AuthControllerInvariants.RegistrationError);
         
         return View(registerViewModel);
     }
