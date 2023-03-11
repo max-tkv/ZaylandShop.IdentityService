@@ -58,7 +58,8 @@ public class Startup
             services.ConfigureApplicationCookie(option =>
             {
                 option.Cookie.Name = "ZaylandShop.IdentityService.Web.Cookie";
-                option.LoginPath = "/api/v1/auth/login";
+                option.LogoutPath = "/v1/auth/logout";
+                option.LoginPath = "/v1/auth/login";
             });
 
             services.AddDomain();
