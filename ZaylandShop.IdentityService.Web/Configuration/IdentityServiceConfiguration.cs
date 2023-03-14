@@ -7,14 +7,6 @@ namespace ZaylandShop.IdentityService.Web.Configuration;
 
 public static class IdentityServiceConfiguration
 {
-    static string[] allowedScopes =
-    {
-        IdentityServerConstants.StandardScopes.OpenId,
-        IdentityServerConstants.StandardScopes.Profile,
-        IdentityServerConstants.StandardScopes.Email,
-        "ZaylandShopWebAPI"
-    };
-
     public static IEnumerable<ApiScope> ApiScopes =>
         new List<ApiScope>
         {
@@ -41,35 +33,12 @@ public static class IdentityServiceConfiguration
     public static IEnumerable<Client> Clients =>
         new List<Client>
         {
-            new Client
+            new()
             {
                 ClientId = "myclient",
                 ClientSecrets = { new Secret("myclientsecret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 AllowedScopes = { "myapi.read", "myapi.write" }
             }
-            // new Client
-            // {
-            //     ClientId = "zayland-shop-web-api",
-            //     ClientName = "Zayland Shop Web",
-            //     ClientUri = "https://localhost:5001", // todo
-            //
-            //     AllowedGrantTypes = GrantTypes.Code,
-            //     RequireClientSecret = false,
-            //
-            //     RedirectUris =
-            //     {
-            //         "https://localhost:5003" // todo
-            //     },
-            //     AllowedCorsOrigins =
-            //     {
-            //         "https://localhost:5003" // todo
-            //     },
-            //     PostLogoutRedirectUris =
-            //     {
-            //         "https://localhost:5003" // todo
-            //     },
-            //     AllowedScopes = allowedScopes
-            // }
         };
 }

@@ -21,11 +21,10 @@ public static class Entry
         serviceCollection.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
         serviceCollection.AddSwaggerGen(options =>
         {
-            {   //Добавляем документации для контроллеров
-                var xmlFile = $"{Assembly.GetAssembly(typeof(AuthController))?.GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                options.IncludeXmlComments(xmlPath);
-            }
+            // Добавляем документации для контроллеров
+            var xmlFile = $"{Assembly.GetAssembly(typeof(AuthController))?.GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            options.IncludeXmlComments(xmlPath);
         });
         serviceCollection.AddSwaggerGenNewtonsoftSupport();
         serviceCollection.Configure<AppSwaggerOptions>(configuration);
