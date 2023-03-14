@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.Configuration;
+using IdentityServer4.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
@@ -105,6 +106,8 @@ public class Startup
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+            
+            app.UseIdentityServer();
 
             app.UseEndpoints(endpoints =>
             {
@@ -114,7 +117,7 @@ public class Startup
             app.UseAuthentication();
             app.UseAuthorization();
         }
-        
+
         private static void RegisterLifetimeLogging(IHostApplicationLifetime lifetime, ILogger<Startup> logger)
         {
             lifetime.ApplicationStarted.Register(() => logger.LogInformation("App started"));

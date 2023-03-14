@@ -14,7 +14,7 @@ CreateHostBuilder(args).ConfigureAppConfiguration((hostingContext, config) =>
         logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
         logging.AddConsole();
         logging.AddDebug();
-        //logging.AddFile("Logs\\log-{Date}.txt");
+        logging.AddFile("Logs\\log-{Date}.txt");
     })
     .Build().Run();
 
