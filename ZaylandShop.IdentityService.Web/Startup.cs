@@ -9,6 +9,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using ZaylandShop.IdentityService.Controllers;
 using ZaylandShop.IdentityService.Entities;
+using ZaylandShop.IdentityService.Extensions;
 using ZaylandShop.IdentityService.Storage;
 using ZaylandShop.IdentityService.Web.Configuration;
 using ZaylandShop.IdentityService.Web.Configuration.Swagger;
@@ -64,7 +65,7 @@ public class Startup
             });
 
             services.AddDomain();
-            services.AddConfig(_configuration);
+            services.RegisterJwtOptions(_configuration);
 
             services.AddMvc()
                 .AddApi()

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ZaylandShop.IdentityService.Controllers.Invariants;
 using ZaylandShop.IdentityService.Controllers.ViewModels;
 using ZaylandShop.IdentityService.Entities;
+using ITokenService = ZaylandShop.IdentityService.Abstractions.ITokenService;
 
 namespace ZaylandShop.IdentityService.Controllers.Auth.V1;
 
@@ -15,24 +16,33 @@ public class AuthController : Controller
     private readonly IIdentityServerInteractionService _interactiveService;
     private readonly SignInManager<AppUser> _signInManager;
     private readonly UserManager<AppUser> _userManager;
+    private readonly ITokenService _tokenService;
 
     public AuthController(
         IIdentityServerInteractionService interactiveService,
         SignInManager<AppUser> signInManager,
-        UserManager<AppUser> userManager)
+        UserManager<AppUser> userManager,
+        ITokenService tokenService)
     {
         _interactiveService = interactiveService;
         _signInManager = signInManager;
+        _tokenService = tokenService;
         _userManager = userManager;
     }
 
     [HttpGet]
     [Produces("text/html")]
-    public IActionResult Login(string returnUrl)
+    public IActionResult Login(
+        string response_type, 
+        string client_id, 
+        string redirect_uri, 
+        string scope,
+        string state)
     {
         var loginView = new LoginViewModel()
         {
-            ReturnUrl = returnUrl
+            ReturnUrl = redirect_uri,
+            State = state
         };
         
         return View(loginView);
@@ -53,11 +63,13 @@ public class AuthController : Controller
             ModelState.AddModelError(string.Empty, AuthControllerInvariants.UserNotFound);
             return View(loginView);
         }
-    
-        //var password = await _userManager.CheckPasswordAsync(user, loginView.Password);
+        
         var result = await _signInManager.PasswordSignInAsync(loginView.UserName, loginView.Password, false, false);
         if (result.Succeeded)
-            return Redirect(loginView.ReturnUrl);
+        {
+            var token = await _tokenService.CreateTokenAsync(user);
+            return Redirect(loginView.ReturnUrl + $"?code=fhvbsivkasvjabkasjvbkvsdjkvksad&state={loginView.State}&token={token}");   
+        }
         ModelState.AddModelError(string.Empty, AuthControllerInvariants.InvalidPassword);
         
         return View(loginView);

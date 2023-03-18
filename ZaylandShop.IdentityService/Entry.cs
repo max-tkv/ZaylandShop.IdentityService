@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ZaylandShop.IdentityService.Abstractions;
+using ZaylandShop.IdentityService.Services;
+
 
 namespace ZaylandShop.IdentityService;
 
@@ -12,17 +14,7 @@ public static class Entry
     /// <returns>IServiceCollection</returns>
     public static IServiceCollection AddDomain(this IServiceCollection services)
     {
-        return services;
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddConfig(this IServiceCollection services, IConfiguration configuration)
-    {
+        services.AddTransient<ITokenService, TokenService>();
         return services;
     }
 }

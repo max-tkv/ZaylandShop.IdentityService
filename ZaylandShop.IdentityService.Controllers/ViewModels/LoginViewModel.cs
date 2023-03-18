@@ -14,5 +14,8 @@ namespace ZaylandShop.IdentityService.Controllers.ViewModels
         [Required]
         [DataType(DataType.Url)]
         public string ReturnUrl { get; set; }
+
+        [Required]
+        public string State { get; set; }
     }
 }
